@@ -1,0 +1,59 @@
+\documentclass[20pt]{article}
+\usepackage[left=2cm,right=2cm,top=2cm]{geometry}
+\usepackage{physics}
+
+\begin{document}
+\title{{\LARGE \textbf{Solving Ising Model for a particular sample}}}
+\author{}
+\date{}
+\maketitle
+\section*{The Ising Model}
+\paragraph*{The Hamiltonian\\}
+The phase transition is a very interesting and also a quite difficult to explain phenomenon in terms of Statistical Mechanics. There are various kind of crystals which shows phase transitions at various temperatures. To explain the behaviour of a metal near critical temperature, to observe the nature of magnetization, energy, specific heat or the magnetic susceptibility of a substance we use some models to explain those theoretically. One of those models is Ising Model.\\
+In this Model we consider $N$ sites of a $d$-dimensional lattice where each lattice site consists of spins(i.e. magnetic moments). Various physical phenomenons like magnetic moments, susceptibility, specific heat etc. can be explained using this model by considering the interactions between the spins. The Hamiltonian of the system depends on the interactions of the spins($s_i$) and an exchange integral term($J$) having the dimension of energy.\\
+We can write the Hamiltonian as,\\
+
+
+$H(s_1,s_2,...s_N)=-J \sum_{nearest.neighbour} s_i s_j$ \\
+
+
+Here parallel spins corresponds to an energy $-J$ and anti parallel spins corresponds to an energy $+J$.\\
+In presence of an external magnetic field $B$, this Hamiltonian takes the form:\\
+
+$H(s_1,s_2,...s_N)=-J \sum_{nearest.neighbour} s_i s_j - B \sum_{i} s_i$
+
+\paragraph{The Periodic Boundary Condition \\}
+To solve this model we use an assumption called periodic boundary condition. This assumes, say in one dimension, the $(N+1)^{th}$ spin is the $1^{st}$ spin again. Which makes the whole oneD lattice like a ring. And in twoD this assumption makes the  lattice sheet a torus. This assumptions makes the model easier to solve in both oneD and twoD. But in three dimensional case we can use another assumption called \textit{The Mean Field Approximation } to solve the system.
+\paragraph{The Mean Field Approximation\\}
+In the mean field approximation, the basic assumption is that instead of interacting directly with the neighbouring spins, each spin interact with each other with a 'mean field' which follows from the mean orientation of the neighbouring spins.\\
+
+Here for the term in the Hamiltonian $s_i s_j$, we write\\
+
+$s_i s_j = [(s_i - m)+m][(s_j - m)+ m]$,\\ 
+
+here $m$ is the mean field that the spins interact with. Thus,\\
+
+
+$s_i s_j  = (s_i - m)(s_j - m) + m(s_j - m) + m(s_i - m)+ m^2$ \\
+
+
+Here we identify, $(s_i - m)$ and $(s_j - m)$ are the fluctuations of the individual spins from the mean field. Though these fluctuations for individual spins may not be small but the product fluctuations of two different neighbouring spins  may be neglected while doing the sum $\sum_{n.n}$.\\
+Thus, the Hamiltonian becomes:\\
+
+$H_{m.f} = -J \sum_{n.n} [m (s_i - m) + m (s_j - m)] - B \sum_{i} s_i$\\
+
+$\implies H_{m.f} = \frac{1}{2} J N q m^2 - (J q m + B)\sum_{i} s_i $ \\
+
+Here $N$ is the total number of lattice sites and $q$ is the number of nearest neighbours. The $\frac{1}{2}$ comes because we do the sum over pairs not on the individual sites.\\
+Thus if we see the new mean field Hamiltonian carefully, we see that it has removed the interactions and an effective magnetic filed is in action:\\
+$B_{eff} = B + J q m$\\
+
+This is the core concept of the mean field theory. Here we will try to solve the Hamiltonian i.e. try to write the partition function for a specific kind of lattice, and calculate some properties like magnetization, specific heat etc.\\
+Let's know about the sample first.\\
+
+\section*{The Sample}
+\paragraph{Structure\\}
+
+ 
+
+\end{document}
