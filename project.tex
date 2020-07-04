@@ -9,18 +9,17 @@
 \date{}
 \maketitle
 \section{{\Large Introduction\\}}
-The phase transition is a very interesting and also a quite difficult to explain phenomenon in terms of Statistical Mechanics. There are various kind of crystals which shows phase transitions at various temperatures. To explain the behaviour of a metal near critical temperature, to observe the nature of magnetization, energy, specific heat or the magnetic susceptibility of a substance we use some models to explain those theoretically. One of those models is Ising Model. This model was proposed by Ernst Ising initially to explain behaviours in one dimension. He believed this model fails for higher dimension. But later Lars Onsager proposed an complicated but very nice solution to the two dimensional Ising Model proving that this model can be useful in more than higher dimensions. But proper analytic solution of this in 3D is not yet available.In 3D, this is done by some more approximations like Mean Field Theory or computationally using Monte Carlo Method etc.   \\
+The phase transition is a very interesting and also a quite difficult to explain phenomenon in terms of Statistical Mechanics. There are various kind of crystals which shows phase transitions at various temperatures. To explain the behaviour of a metal near critical temperature, to observe the nature of magnetization, energy, specific heat or the magnetic susceptibility of a substance we use some models to explain those theoretically. One of those models is Ising Model. This model was proposed by Ernst Ising initially to explain those behaviours in one dimension. He believed this model fails for higher dimensions. But later Lars Onsager proposed an complicated but very nice solution to the two dimensional Ising Model proving that this model can be useful in more than one dimensions. But proper analytic solution of this in 3D is not yet available. In 3D, this is done by some more approximations like Mean Field Theory or computationally using Monte Carlo Method etc.   \\
 \paragraph*{{\large The Ising Model}}
 \paragraph*{Hamiltonian\\}
 
-In this Model we consider $N$ sites of a $d$-dimensional lattice where each lattice site consists of spins(i.e. magnetic moments). Various physical phenomenons like magnetic moments, susceptibility, specific heat etc. can be explained using this model by considering the interactions between the spins. The Hamiltonian of the system depends on the interactions of the spins($s_i$) and an exchange integral term($J$) having the dimension of energy.\\
-We can write the Hamiltonian as,\\
+In this Model we consider $N$ sites of a $d$-dimensional lattice where each lattice site consists of spins(i.e. magnetic moments). Physical phenomenons like magnetic moments, susceptibility, specific heat etc. are explained in this model by considering the interactions between the spins. The simplest case is considering only the nearest  neighbour interactions. The Hamiltonian of the system depends on the interactions of the spins and an exchange integral term($J$) which has the dimension of energy. If we write the eigenvalue of the $i^{th}$ spin as $s_i$, then the Hamiltonian will be,\\
 
 
 $H(s_1,s_2,...s_N)=-J \sum_{nearest.neighbour} s_i s_j$ \\
 
 
-Here parallel spins corresponds to an energy $-J$ and anti parallel spins corresponds to an energy $+J$.\\
+If $J>0$ the neighbouring spins prefer to be aligned (i.e. $ \uparrow \uparrow$ or $ \downarrow \downarrow$). Such a spin system is called ferromagnet. And for $J<0$, neighbouring spins are anti-aligned($\uparrow \downarrow$), these are called anti-ferromagnet.  \\
 In presence of an external magnetic field $B$, this Hamiltonian takes the form:\\
 
 $H(s_1,s_2,...s_N)=-J \sum_{nearest.neighbour} s_i s_j - B \sum_{i} s_i$
@@ -50,7 +49,17 @@ $\implies H_{m.f} = \frac{1}{2} J N q m^2 - (J q m + B)\sum_{i} s_i $ \\
 
 Here $N$ is the total number of lattice sites and $q$ is the number of nearest neighbours. The $\frac{1}{2}$ comes because we do the sum over pairs not on the individual sites.\\
 Thus if we see the new mean field Hamiltonian carefully, we see that it has removed the interactions and an effective magnetic filed is in action:\\
-$B_{eff} = B + J q m$\\
+
+$B_{eff} = B + J q m$\\. 
+
+From here, in \textit{Canonical Ensemble}, we can write a partition function,\\
+
+$Z= \sum_{s_i} \exp[-\beta H(s_i)]$\\
+ 
+and the average magnetization:\\
+ 
+$m= \frac{1}{N} \sum_{i} s_i = \frac{1}{N \beta} \pdv {log(Z)}{\beta}$\\
+  
 
 This is the core concept of the mean field theory. Here we will try to solve the Hamiltonian i.e. try to write the partition function for a specific kind of lattice, and calculate some properties like magnetization, specific heat etc.\\
 Let's know about the sample first.\\
@@ -77,6 +86,9 @@ The $Ni$-s at the corners have 6 $O$-s around it (Figure 2). This makes it a $Ni
 \paragraph*{Spin Structure\\}
 Generally while solving the Ising Model we take the spins of the lattice points as $\pm1$ , but in case of real crystals like this we can have a mixed spin structures. Here we will take spins of $LaNiO_3$ which belongs to the class of $RNiO_3$.\\
 We know that the term symbols for $Ni$, $O$ and $La$ are $^3F_4$, $^3P_2$ and  $^2D_{\frac{3}{2}}$ respectively. Thus their spins are $\pm 1$, $\pm 1$ and $\pm\frac{1}{2}$ respectively. 
+
+
+
 
 
 
